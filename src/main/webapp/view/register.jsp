@@ -56,7 +56,7 @@
         <div class="alert">${alert}</div>
     </c:if>
 
-    <form action="${pageContext.request.contextPath}/register" method="post">
+    <form action="/SignIn/register" method="post">
         <input type="text" name="fullname" placeholder="Họ và tên" required>
         <input type="text" name="username" placeholder="Tên đăng nhập" required>
         <input type="email" name="email" placeholder="Email" required>
