@@ -34,6 +34,7 @@ public class LoginController extends HttpServlet{
 		resp.setContentType("text/html");
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
+		String act = req.getParameter("act");
 		String uname = req.getParameter("username");
 		String pws = req.getParameter("password");
 		boolean rememberme = false;
@@ -64,8 +65,6 @@ public class LoginController extends HttpServlet{
 			req.setAttribute("alert", alertMsg);
 			req.getRequestDispatcher("/view/login.jsp").forward(req, resp);
 		}
-		
-		
 	}
 	private void saveRememberme(HttpServletResponse resp, String uname) {
 		// TODO Auto-generated method stub

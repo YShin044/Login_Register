@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import vn.iotstar.models.UserModel;
 
 @WebServlet(urlPatterns = { "/waiting" })
-public class WattingController extends HttpServlet {
+public class WatingController extends HttpServlet {
 
 	/**
 	 * 
