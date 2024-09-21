@@ -64,4 +64,10 @@ public class UserService implements IUserService {
 		return userdao.checkExistPhone(phone);
 	}
 
+	@Override
+	public boolean updatePassword(int id, String newpass) {
+		// TODO Auto-generated method stub
+		return userdao.updatePassword(id, newpass);
+	}
+
 }

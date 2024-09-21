@@ -35,7 +35,7 @@
             text-align: left;
         }
 
-        input[type="text"], input[type="email"], input[type="tel"] {
+        input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
             width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 15px;
@@ -72,6 +72,8 @@
         <c:if test="${alertMsg != null}">
             <p class="alert">${alertMsg}</p>
         </c:if>
+
+        <!-- Nhập username, email, và số điện thoại -->
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
@@ -80,6 +82,13 @@
 
         <label for="phone">Phone Number:</label>
         <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <!-- Nhập mật khẩu mới và xác nhận lại mật khẩu -->
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your new password" required>
 
         <button type="submit">Submit</button>
     </form>

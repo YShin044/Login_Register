@@ -50,7 +50,7 @@
 </head>
 <body>
     <h1>Welcome to Your Home Page</h1>
-    <form action="home/logout" method="post">
+    <form action="/SignIn/home/logout" method="post">
         <button type="submit">Log Out</button>
     </form>
 </body>

@@ -87,22 +87,41 @@ public class UserDaoImplement extends DBconnectMySql implements IUserDao{
 			ps.setInt(6, a.getRoleid());
 			ps.setString(7, a.getPhone());
 			ps.setDate(8, a.getCreatedate());
-			ps.executeUpdate();
+			int rowsUpdated = ps.executeUpdate();
+	        if (rowsUpdated > 0) {
+	            return true;
+	        }
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			
 		}
 		return false;
 	}
-	
+	@Override
+	public boolean updatePassword(int userId, String newPassword) {
+	    String sql = "UPDATE user SET password=? WHERE id=?";
+	    try {
+	        conn = super.getConnection();
+	        ps = conn.prepareStatement(sql);
+	        ps.setString(1, newPassword);  
+	        ps.setInt(2, userId);
+	        int rowsUpdated = ps.executeUpdate();
+	        if (rowsUpdated > 0) {
+	            return true;
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return false;
+	    
+	}
+
 
 	
 	public static void main(String[] args) {
 		IUserDao userdao = new UserDaoImplement();
-		Date currentDate = new Date(System.currentTimeMillis());
-		System.out.println(userdao.insert(new UserModel("nguyễn văn B","B@gmail.com","","B123","123",1,
-				"1234567890", currentDate)));
+		System.out.println(userdao.updatePassword(16,"12345"));
+		
 	}
 
 	@Override
